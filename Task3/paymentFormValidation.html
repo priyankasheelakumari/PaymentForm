@@ -1,0 +1,111 @@
+<!-- 
+Task 3: Payment Form Creation:
+Design a simple HTML form for collecting payment information, ensuring it
+collects at least the following data: Name on Card, Credit Card Number,
+Expiration Date, and CVV.-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment-Form</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../Task4/paymentFormValidation.css" />
+  </head>
+  <body>
+    <header id="main-head">Payment Form</header>
+    <main>
+      <section>
+        <div class="form-container">
+          <form action="" id="payment-form" onsubmit="validateForm(event)">
+            <div class="input-group">
+              <label for="username">Name on Card</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                aria-describedby="name-error"
+                aria-label="Enter name on card"
+                aria-required="true"
+                placeholder="Enter name on card"
+                onblur="validateName()"
+              />
+              <span
+                id="name-error"
+                class="error-message"
+                aria-live="polite"
+              ></span>
+            </div>
+            <div class="input-group">
+              <label for="cardno">Card Number</label>
+              <input
+                type="text"
+                id="cardno"
+                name="cardno"
+                aria-describedby="cardno-error"
+                aria-label="Enter Card number"
+                aria-required="true"
+                placeholder="Enter Card number"
+                onblur="validateCardNo()"
+              />
+              <span
+                id="cardno-error"
+                class="error-message"
+                aria-live="polite"
+              ></span>
+            </div>
+            <div class="input-group">
+              <label for="expirydate">Expiry Date</label>
+              <input
+                type="text"
+                id="expirydate"
+                name="expirydate"
+                aria-describedby="expirydate-error"
+                aria-label="Enter month and year in MM/YY"
+                aria-required="true"
+                placeholder="MM/YY"
+                onblur="validateExpiryDate()"
+              />
+              <span
+                id="expirydate-error"
+                class="error-message"
+                aria-live="polite"
+              ></span>
+            </div>
+            <div class="input-group">
+              <label for="cvvcode">Security Code</label>
+              <input
+                type="text"
+                id="cvvcode"
+                name="cvvcode"
+                aria-describedby="securitycode-error"
+                aria-label="Enter CVV"
+                aria-required="true"
+                placeholder="Enter CVV"
+                onblur="validateCVV()"
+              />
+              <span
+                id="securitycode-error"
+                class="error-message"
+                aria-live="polite"
+              ></span>
+            </div>
+            <button type="submit">Submit</button>
+            <span
+              id="submit-error"
+              class="error-message"
+              aria-live="polite"
+            ></span>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>Privacy Policy</footer>
+    <script src="../Task2/paymentFormValidation.js"></script>
+  </body>
+</html>

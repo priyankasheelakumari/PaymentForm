@@ -1,0 +1,121 @@
+/* 
+Task 4:CSS Styling
+How would you apply CSS to improve the usability and appearance of the
+above form?
+○ Provide an example code style the form and insights into CSS
+best practices for form design, including layout and
+responsiveness. */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: rgb(5, 25, 94);
+}
+#main-head,
+footer {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-weight: 300;
+  color: white;
+}
+footer {
+  text-decoration: underline;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 80vh;
+  min-width: 300px;
+  max-height: 100vh;
+  padding: 2rem;
+  background-color: rgb(5, 25, 94);
+}
+form {
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #310808;
+  border-radius: 1em;
+  box-shadow: 0 5px 30px rgb(26, 23, 23);
+  background-color: #fcfafa;
+  padding: 2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  flex-basis: 28%;
+}
+.input-group input {
+  flex-basis: 68%;
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid #0303035e;
+  font-size: 1.2rem;
+  color: #0c0a0a;
+  padding: 0.5rem 0;
+}
+
+.input-group input:focus {
+  border-bottom: 2px solid rgb(5, 25, 94);
+}
+
+button {
+  background-color: rgb(5, 25, 94);
+  color: white;
+  padding: 0.5em;
+  border-radius: 10px 10px;
+  transition: 150 ease-in;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  background-color: rgb(21, 139, 218);
+  color: #fcfafa;
+}
+input:focus {
+  outline-color: #000;
+  outline-style: d;
+}
+.input-group span,
+#submit-error {
+  color: red;
+}
+.input-group span i {
+  color: rgb(5, 25, 94);
+}
+@media screen and (max-width: 450px) {
+  .form-container {
+    width: 90%;
+    min-height: 60vh;
+    padding: 1rem;
+  }
+  #main-head {
+    font-size: 5vw;
+  }
+
+  .input-group input {
+    font-size: 1rem;
+  }
+  button {
+    width: 100%;
+  }
+}
